@@ -12,16 +12,19 @@
         
         <Grid Grid.Row="0" ColumnDefinitions="*,*,*">
             <Border Grid.Column="0"
-                    HorizontalOptions="Start">
+                    HorizontalOptions="Start"
+                    Style="{StaticResource EllipseBorderStyle}">
                 <Image Source="hamberger_menu.png"
                        HorizontalOptions="Center"
                        VerticalOptions="Center"/>
             </Border>
-            <Image Grid.Column="1">
+            <Image Grid.Column="1"
+                   Style="{StaticResource ImgBrandStyle}">
                 
             </Image>
             <Border Grid.Column="2"
                     HorizontalOptions="End"
+                    Padding="15"
                     Style="{StaticResource EllipseBorderStyle}">
                 <Image Source="shop_bag.png"
                        HorizontalOptions="Center"
@@ -29,8 +32,37 @@
             </Border>
         </Grid>
 
-        <ScrollView Grid.Row="1">
-            
+        <ScrollView Grid.Row="1"
+                    Orientation="Vertical"
+                    BackgroundColor="Transparent">
+            <Grid RowDefinitions="Auto,Auto">
+                <VerticalStackLayout Grid.Row="0"
+                                     Margin="0,20,0,0">
+                    <Label Text="Our way of loving"
+                           FontFamily="RalewayRegular"
+                           FontSize="32"
+                           HorizontalOptions="Start"
+                           HorizontalTextAlignment="Start"
+                           TextColor="#00623B"/>
+                    <Label Text="you back"
+                           Style="{StaticResource LargeMessageLabelStyle}"/>
+                    <Grid>
+                        <Border Style="{StaticResource SearchBorderStyle}">
+                            <Grid ColumnDefinitions="Auto,*"
+                                  ColumnSpacing="20">
+                                <Image Grid.Column="0"
+                                       Source="search.png"/>
+                                <Entry Grid.Column="1"
+                                       Style="{StaticResource SearchEntryStyle}"/>
+                            </Grid>
+                        </Border>
+                        <Border Style="{StaticResource FilterBorderStyle}">
+                            <Image Source="filter.png"/>
+                        </Border>
+                    </Grid>
+                </VerticalStackLayout>
+                
+            </Grid>
         </ScrollView>
             
             
