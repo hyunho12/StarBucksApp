@@ -72,7 +72,14 @@
         <Setter Property="VerticalOptions" Value="Center"/>
         <Setter Property="TextColor" Value="{StaticResource Primary}"/>
     </Style>
-        
+
+    <x:Array Type="{x:Type x:String}" x:Key="CategoriesArray">
+        <x:String>All</x:String>
+        <x:String>Coffee</x:String>
+        <x:String>Tea</x:String>
+        <x:String>Drink</x:String>
+        <x:String>Food</x:String>
+    </x:Array>
         
         
         
