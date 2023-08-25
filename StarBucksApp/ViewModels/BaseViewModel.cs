@@ -16,6 +16,6 @@ namespace StarBucksApp.ViewModels
     public interface IViewModel
     {
         Task Initialize();
-        Task Stop();
+        Task Stop();        
     }
 }

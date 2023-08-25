@@ -18,5 +18,11 @@ namespace StarBucksApp.Pages
             await ViewModel.Initialize();
             base.OnAppearing();
         }
+
+        protected async override void OnDisappearing()
+        {
+            await ViewModel.Stop();
+            base.OnDisappearing();
+        }
     }
 }
