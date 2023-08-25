@@ -15,13 +15,10 @@ namespace StarBucksApp.Models
         public int productId;
 
         [ObservableProperty]
-        public string productName;
-
-        [ObservableProperty]
         public string productType;
 
         [ObservableProperty]
-        public string productDescription;
+        public string productName;        
 
         [ObservableProperty]
         public string productImgUrl;
@@ -30,10 +27,13 @@ namespace StarBucksApp.Models
         public Color productImgBackground;
 
         [ObservableProperty]
+        public double productBasePrice;
+
+        [ObservableProperty]
         public double productPrice;
 
         [ObservableProperty]
-        public double productBasePrice;
+        public string productDescription;
 
         [ObservableProperty]
         public bool productIsFav;
@@ -62,7 +62,6 @@ namespace StarBucksApp.Models
     {
         [ObservableProperty]
         public string productSizeImgUrl;
-
         [ObservableProperty]
         public string productSizeName;
     }

@@ -73,6 +73,13 @@
         <Setter Property="TextColor" Value="{StaticResource Primary}"/>
     </Style>
 
+    <!--<Style TargetType="Button" x:Key="TestBtn">
+        <Setter Property="FontFamily" Value="RalewayRegular"/>
+        <Setter Property="BackgroundColor" Value="AliceBlue"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+    </Style>-->
+
     <x:Array Type="{x:Type x:String}" x:Key="CategoriesArray">
         <x:String>All</x:String>
         <x:String>Coffee</x:String>

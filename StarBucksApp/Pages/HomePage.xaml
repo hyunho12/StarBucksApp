@@ -152,9 +152,10 @@
                     </StackLayout>
                     
                     <!--제품리스트-->
-                    <CollectionView ItemsSource="{Binding }"
+                    <CollectionView ItemsSource="{Binding Products}"
                                     SelectionMode="None"
-                                    VerticalOptions="StartAndExpand">
+                                    VerticalOptions="StartAndExpand"
+                                    Margin="-10,0,0,0">
                         <CollectionView.ItemsLayout>
                             <GridItemsLayout Orientation="Horizontal"/>
                         </CollectionView.ItemsLayout>
@@ -162,8 +163,10 @@
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <VerticalStackLayout>
-                                    <Border WidthRequest="240"
-                                            BackgroundColor="{StaticResource Tertiary}"
+                                    <Border Padding="0"
+                                            Margin="15,10,5,5"
+                                            WidthRequest="240"
+                                            BackgroundColor="{StaticResource Tertiary}"                                            
                                             Stroke="Gray"
                                             StrokeThickness="0"
                                             StrokeShape="RoundRectangle 15">
