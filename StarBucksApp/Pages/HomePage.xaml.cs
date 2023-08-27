@@ -1,10 +1,12 @@
+using StarBucksApp.ViewModels;
+
 namespace StarBucksApp.Pages;
 
-public partial class HomePage : ContentPage
-{
+public partial class HomePage : CustomTabBar
+{    
 	public HomePage()
 	{
-		InitializeComponent();
+		InitializeComponent();        
 	}
 
     private async void Button_Clicked(object sender, EventArgs e)
