@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using StarBucksApp.Models;
 using StarBucksApp.Services;
 using System;
@@ -7,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace StarBucksApp.ViewModels
 {
@@ -20,10 +22,22 @@ namespace StarBucksApp.ViewModels
 
         [ObservableProperty]
         ObservableCollection<Product> _products;
+
+        public HomeViewModel() 
+        {
+            DetailCommand = new Command(OnDetailCommand);
+        }
+
+        public ICommand DetailCommand { get; }
+
+        private async void OnDetailCommand(object obj)
+        {
+            await Shell.Current.GoToAsync($"detail");
+        }
         
         public override Task Initialize()
         {
-            //CategorySelectedValue = "All";
+            CategorySelectedValue = "All";
             Categories = Enum.GetNames(typeof(CoffeeCategory)).Cast<string>().Select(x => x.ToString()).ToArray();
             Products = new ObservableCollection<Product>(ProductService.Instance.GetProducts());
             return Task.CompletedTask;
@@ -32,6 +46,12 @@ namespace StarBucksApp.ViewModels
         public override Task Stop()
         {
             return Task.CompletedTask;
+        }
+
+        [RelayCommand]
+        async Task ProductSelected(Product product)
+        {
+            await Shell.Current.GoToAsync($"detail?");
         }
     }
 }

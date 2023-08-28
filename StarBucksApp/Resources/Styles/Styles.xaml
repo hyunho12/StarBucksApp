@@ -16,7 +16,7 @@
                 <Ellipse/>
             </Setter.Value>
         </Setter>
-    </Style>
+    </Style>    
 
     <Style x:Key="SearchBorderStyle" TargetType="Border">
         <Setter Property="Background" Value="{StaticResource Gray100Brush}"/>
