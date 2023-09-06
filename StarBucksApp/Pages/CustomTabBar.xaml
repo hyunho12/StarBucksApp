@@ -11,7 +11,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <ContentView Grid.Row="0"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+        <ContentView Grid.Row="0" Content="{Binding ViewContent, Source={x:Reference BaseTabBar}}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
 
         <Frame Grid.Row="1" HeightRequest="66" CornerRadius="33" Padding="0" VerticalOptions="End" BackgroundColor="{DynamicResource Primary}"
                Background="{DynamicResource Primary}" IsClippedToBounds="False">
