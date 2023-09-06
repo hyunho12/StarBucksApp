@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StarBucksApp.Pages.CustomTabBar"
+             Title="CustomTabBar">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ContentView Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+        <Frame Grid.Row="1" HeightRequest="66" CornerRadius="33" Padding="0" VerticalOptions="End" BackgroundColor="{DynamicResource Primary}"
+               Background="{DynamicResource Primary}" IsClippedToBounds="False">
+            <Grid ColumnDefinitions="*,*,*,*">
+                <ImageButton Grid.Column="0" Source="home.png" Aspect="Center" Padding="12">
+                    
+                </ImageButton>
+
+                <ImageButton Grid.Column="1" Source="wallet.png" Aspect="Center" Padding="12">
+                    
+                </ImageButton>
+
+                <ImageButton Grid.Column="2" Source="fav.png" Aspect="Center" Padding="12">
+                    
+                </ImageButton>
+
+                <ImageButton Grid.Column="3" Source="notification.png" Aspect="Center" Padding="12">
+                    
+                </ImageButton>
+            </Grid>
+        </Frame>
+    </Grid> 
+</ContentPage>

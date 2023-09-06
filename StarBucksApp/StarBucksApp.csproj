@@ -49,6 +49,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\Poppins-Regular.ttf" />
+	  <None Remove="Resources\Fonts\ProximaNova-Regular.otf" />
+	  <None Remove="Resources\Fonts\Raleway-Medium.ttf" />
+	  <None Remove="Resources\Fonts\Raleway-Regular.ttf" />
 	  <None Remove="Resources\Images\add.png" />
 	  <None Remove="Resources\Images\back_arrow.png" />
 	  <None Remove="Resources\Images\chocolate_frappuccino.png" />
@@ -74,16 +78,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Maui" Version="2.0.0" />
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Pages\FavoritePage.xaml.cs">
-	    <DependentUpon>FavoritePage.xaml</DependentUpon>
-	  </Compile>
+	  <Folder Include="Models\" />
+	  <Folder Include="Services\" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Pages\CustomTabBar.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\DetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

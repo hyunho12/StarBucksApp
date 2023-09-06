@@ -4,8 +4,21 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:StarBucksApp"
-    
+    xmlns:pages="clr-namespace:StarBucksApp.Pages"
     Shell.FlyoutBehavior="Disabled">
 
-    
+    <TabBar Route="starbucks">
+        <Tab Title="홈" Icon="home.png" Route="home">
+            <ShellContent ContentTemplate="{DataTemplate pages:HomePage}"/>
+        </Tab>
+        <Tab Title="지갑" Icon="wallet.png" Route="wallet">
+            <ShellContent ContentTemplate="{DataTemplate pages:WalletPage}"/>
+        </Tab>
+        <Tab Title="즐겨찾기" Icon="fav.png" Route="fav">
+            <ShellContent ContentTemplate="{DataTemplate pages:FavoritePage}"/>
+        </Tab>
+        <Tab Title="알림" Icon="notification.png" Route="notification">
+            <ShellContent ContentTemplate="{DataTemplate pages:NotificationPage}"/>
+        </Tab>
+    </TabBar>
 </Shell>
