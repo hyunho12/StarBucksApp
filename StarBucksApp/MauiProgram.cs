@@ -1,4 +1,6 @@
 ﻿using CommunityToolkit.Maui;
+using StarBucksApp.Pages;
+using StarBucksApp.ViewModels;
 
 namespace StarBucksApp;
 
@@ -18,7 +20,7 @@ public static class MauiProgram
                 //fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 //fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
-
+		builder.Services.AddScoped<HomePage, HomeViewModel>();
 		return builder.Build();
 	}
 }

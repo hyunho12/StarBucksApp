@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StarBucksApp.Pages.CustomTabBar"
+             x:Name="BaseTabBar"
              Title="CustomTabBar">
 
     <Grid>
@@ -10,7 +11,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <ContentView Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+        <ContentView Grid.Row="0"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
 
         <Frame Grid.Row="1" HeightRequest="66" CornerRadius="33" Padding="0" VerticalOptions="End" BackgroundColor="{DynamicResource Primary}"
                Background="{DynamicResource Primary}" IsClippedToBounds="False">

@@ -6,6 +6,21 @@
              Title="">
 
     <page:CustomTabBar.ViewContent>
-        
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" ColumnDefinitions="*,*,*">
+                <Border Grid.Column="0" HorizontalOptions="Start" Style="{StaticResource EllipseBorderStyle}">
+                    <Image Source="humberger_menu.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Border>
+                <Image Grid.Column="1" Style="{StaticResource ImgBrandStyle}"/>
+                <Border Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" Padding="15" Style="{StaticResource EllipseBorderStyle}">
+                    <Image Source="shop_bag.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Border>
+            </Grid>
+        </Grid>
     </page:CustomTabBar.ViewContent>
 </page:CustomTabBar>
