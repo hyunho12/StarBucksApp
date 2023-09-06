@@ -4,21 +4,8 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:StarBucksApp"
-    xmlns:pages="clr-namespace:StarBucksApp.Pages"
+    
     Shell.FlyoutBehavior="Disabled">
 
-    <TabBar>
-        <Tab Title="Home" Icon="home.png">
-            <ShellContent Title="Home" Route="home" Icon="home.png" ContentTemplate="{DataTemplate pages:HomePage}"/>
-        </Tab>
-        <Tab Title="Wallet" Icon="wallet.png">
-            <ShellContent Title="Wallet" Route="wallet" Icon="wallet.png" ContentTemplate="{DataTemplate pages:WalletPage}"/>
-        </Tab>
-        <Tab Title="Fav" Icon="fav.png">
-            <ShellContent Title="Fav" Route="fav" Icon="fav.png" ContentTemplate="{DataTemplate pages:FavouritePage}"/>
-        </Tab>
-        <Tab Title="Notification" Icon="notification.png">
-            <ShellContent Title="Notification" Route="notification" Icon="notification.png" ContentTemplate="{DataTemplate pages:NotificationPage}"/>
-        </Tab>
-    </TabBar>
+    
 </Shell>
