@@ -106,7 +106,7 @@
                                    FontSize="22" />
                         </StackLayout>
 
-                        <CollectionView ItemsSource="{Binding Products}">
+                        <CollectionView ItemsSource="{Binding Products}" x:Name="CvView">
                             <CollectionView.ItemsLayout>
                                 <GridItemsLayout Orientation="Horizontal"/>
                             </CollectionView.ItemsLayout>
@@ -128,7 +128,7 @@
                                             </Border.Shadow>
 
                                             <Border.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding BindingContext.ProductDetailCommand, Source={x:Reference HomeView}}"
+                                                <TapGestureRecognizer Command="{Binding BindingContext.ProductDetailCommand, Source={x:Reference CvView}}"
                                                                       CommandParameter="{Binding .}" />
                                             </Border.GestureRecognizers>
 

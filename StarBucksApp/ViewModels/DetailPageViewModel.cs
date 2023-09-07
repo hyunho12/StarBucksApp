@@ -12,6 +12,10 @@ namespace StarBucksApp.ViewModels
 
         public DetailPageViewModel() { }
 
-        
+        [RelayCommand]
+        public async Task BackAsync()
+        {
+            await Shell.Current.GoToAsync("..", true);
+        }
     }
 }
