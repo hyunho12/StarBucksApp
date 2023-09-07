@@ -1,4 +1,6 @@
-﻿namespace StarBucksApp;
+﻿using StarBucksApp.Pages;
+
+namespace StarBucksApp;
 
 public partial class AppShell : Shell
 {
@@ -6,8 +8,9 @@ public partial class AppShell : Shell
 	{
 		InitializeComponent();
 
-		Shell.SetNavBarIsVisible(this, false);
+        Shell.SetTabBarIsVisible(this, false);
 
+		Routing.RegisterRoute("detail", typeof(DetailPage));
 
-	}
+    }
 }

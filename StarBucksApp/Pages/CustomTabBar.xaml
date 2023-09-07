@@ -16,19 +16,23 @@
         <Frame Grid.Row="1" HeightRequest="66" CornerRadius="33" Padding="0" VerticalOptions="End" BackgroundColor="{DynamicResource Primary}"
                Background="{DynamicResource Primary}" IsClippedToBounds="False">
             <Grid ColumnDefinitions="*,*,*,*">
-                <ImageButton Grid.Column="0" Source="home.png" Aspect="Center" Padding="12">
+                <ImageButton Grid.Column="0" Source="home.png" Aspect="Center" Padding="12"
+                             Command="{Binding HomeCommand, Source={x:Reference BaseTabBar}}">
                     
                 </ImageButton>
 
-                <ImageButton Grid.Column="1" Source="wallet.png" Aspect="Center" Padding="12">
+                <ImageButton Grid.Column="1" Source="wallet.png" Aspect="Center" Padding="12"
+                             Command="{Binding WalletCommand, Source={x:Reference BaseTabBar}}">
                     
                 </ImageButton>
 
-                <ImageButton Grid.Column="2" Source="fav.png" Aspect="Center" Padding="12">
+                <ImageButton Grid.Column="2" Source="fav.png" Aspect="Center" Padding="12"
+                             Command="{Binding FavoriteCommand, Source={x:Reference BaseTabBar}}">
                     
                 </ImageButton>
 
-                <ImageButton Grid.Column="3" Source="notification.png" Aspect="Center" Padding="12">
+                <ImageButton Grid.Column="3" Source="notification.png" Aspect="Center" Padding="12"
+                             Command="{Binding NotificationCommand, Source={x:Reference BaseTabBar}}">
                     
                 </ImageButton>
             </Grid>

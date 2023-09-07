@@ -1,9 +1,13 @@
+using StarBucksApp.ViewModels;
+
 namespace StarBucksApp.Pages;
 
 public partial class DetailPage : ContentPage
 {
-	public DetailPage()
+	private DetailPageViewModel viewModel;
+	public DetailPage(DetailPageViewModel vm)
 	{
 		InitializeComponent();
+		BindingContext = vm;
 	}
 }

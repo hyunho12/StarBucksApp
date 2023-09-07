@@ -1,6 +1,6 @@
 namespace StarBucksApp.Pages;
 
-public partial class FavoritePage : ContentPage
+public partial class FavoritePage : CustomTabBar
 {
 	public FavoritePage()
 	{

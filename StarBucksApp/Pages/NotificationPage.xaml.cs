@@ -1,6 +1,6 @@
 namespace StarBucksApp.Pages;
 
-public partial class NotificationPage : ContentPage
+public partial class NotificationPage : CustomTabBar
 {
 	public NotificationPage()
 	{

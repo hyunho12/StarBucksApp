@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StarBucksApp.Pages.HomePage"
              xmlns:page="clr-namespace:StarBucksApp.Pages"
+             x:Name="HomeView"
              Title="">
 
     <page:CustomTabBar.ViewContent>
@@ -127,7 +128,8 @@
                                             </Border.Shadow>
 
                                             <Border.GestureRecognizers>
-                                                <TapGestureRecognizer />
+                                                <TapGestureRecognizer Command="{Binding BindingContext.ProductDetailCommand, Source={x:Reference HomeView}}"
+                                                                      CommandParameter="{Binding .}" />
                                             </Border.GestureRecognizers>
 
                                             <Grid RowDefinitions="Auto,Auto,Auto">

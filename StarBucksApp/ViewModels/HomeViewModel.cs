@@ -1,19 +1,24 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using StarBucksApp.Models;
 using StarBucksApp.Services;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StarBucksApp.ViewModels
 {
     public partial class HomeViewModel : BaseViewModel
     {
         [ObservableProperty]
-        private ObservableCollection<Product> products;
+        private ObservableCollection<Product> _products;
+
+        [RelayCommand]
+        public async Task ProductDetailAsync(object obj)
+        {
+            await Shell.Current.GoToAsync("detail", new Dictionary<string, object>
+            {
+                ["SelectedProduct"] = (Product)obj
+            });
+        }
 
         public HomeViewModel() 
         {
