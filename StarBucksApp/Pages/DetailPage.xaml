@@ -53,7 +53,68 @@
 
             <Grid ColumnDefinitions="*,Auto">
                 <HorizontalStackLayout Grid.Column="0">
+                    <BindableLayout.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Tall</x:String>
+                            <x:String>Grande</x:String>
+                            <x:String>Venti</x:String>
+                        </x:Array>
+                    </BindableLayout.ItemsSource>
                     
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <RadioButton Content="{Binding .}" Value="{Binding .}">
+                                <RadioButton.ControlTemplate>
+                                    <ControlTemplate>
+                                        <Grid RowDefinitions="Auto,*" RowSpacing="5">
+                                            <Border Grid.Row="0" x:Name="SquareBorderView" StrokeThickness="0"
+                                                    WidthRequest="80" HeightRequest="80">
+                                                <Border.StrokeShape>
+                                                    <RoundRectangle CornerRadius="5"/>
+                                                </Border.StrokeShape>
+                                                <Image Aspect="Center">
+                                                    <Image.Triggers>
+                                                        <DataTrigger TargetType="Image" Binding="{TemplateBinding Content}" Value="Tall">
+                                                            <Setter Property="Source" Value="tall.png"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger TargetType="Image" Binding="{TemplateBinding Content}" Value="Grande">
+                                                            <Setter Property="Source" Value="grande.png"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger TargetType="Image" Binding="{TemplateBinding Content}" Value="Venti">
+                                                            <Setter Property="Source" Value="venti.png"/>
+                                                        </DataTrigger>
+                                                    </Image.Triggers>
+                                                </Image>
+                                            </Border>
+
+                                            <Label Grid.Row="1" x:Name="SizeLabel" HorizontalTextAlignment="Center" FontSize="16"
+                                                   FontFamily="RalewayRegular" Text="{TemplateBinding Content}" />
+
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroupList>
+                                                    <VisualStateGroup x:Name="CheckedStates">
+                                                        <VisualState x:Name="Checked">
+                                                            <VisualState.Setters>
+                                                                <Setter TargetName="SizeLabel" Property="Label.TextColor" Value="{StaticResource Primary}"/>
+                                                                <Setter TargetName="SquareBorderView" Property="Border.BackgroundColor" Value="{StaticResource Primary}"/>
+                                                            </VisualState.Setters>
+                                                        </VisualState>
+
+                                                        <VisualState x:Name="Unchecked">
+                                                            <VisualState.Setters>
+                                                                <Setter TargetName="SizeLabel" Property="Label.TextColor" Value="{StaticResource Gray500}"/>
+                                                                <Setter TargetName="SquareBorderView" Property="Border.BackgroundColor" Value="{StaticResource Gray100}"/>
+                                                            </VisualState.Setters>
+                                                        </VisualState>
+                                                    </VisualStateGroup>
+                                                </VisualStateGroupList>
+                                            </VisualStateManager.VisualStateGroups>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </RadioButton.ControlTemplate>
+                            </RadioButton>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
                 </HorizontalStackLayout>
             </Grid>
         </StackLayout>
