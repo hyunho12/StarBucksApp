@@ -2,14 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StarBucksApp.Pages.DetailPage"
+             xmlns:control="clr-namespace:StarBucksApp.ControlViews"
              Shell.NavBarIsVisible="False"
              Title="">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition />
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
@@ -28,16 +29,19 @@
             </Border>
         </Grid>
 
-        <Grid Grid.Row="1" Margin="0,10,0,0">
+        <Grid Grid.Row="1" Margin="0,30,0,0">
             <Border BackgroundColor="{StaticResource SelectedProduct.ProductImgBackground}">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="15"/>
                 </Border.StrokeShape>
                 <Image Source="{Binding SelectedProduct.ProductImgUrl}" Aspect="AspectFit" HeightRequest="220"/>
             </Border>
+
+            <control:CustomStepperView WidthRequest="110" HeightRequest="30" HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="End"/>
         </Grid>
 
-        <StackLayout Grid.Row="2">
+        <StackLayout Grid.Row="2" Margin="0,30,0,0">
             <Label Text="{Binding SelectedProduct.ProductType}" FontFamily="Raleway-Medium" FontSize="18"/>
             <Grid ColumnDefinitions="Auto,*">
                 <Label Grid.Column="0" Text="{Binding SelectedProduct.ProductName}" FontFamily="Raleway-Medium"
@@ -51,8 +55,8 @@
             <Label Text="{Binding SelectedProduct.ProductDescription}" FontSize="18" FontFamily="ProximaNovaRegular"
                    TextColor="#6D6D6D" Margin="0,20"/>
 
-            <Grid ColumnDefinitions="*,Auto">
-                <HorizontalStackLayout Grid.Column="0">
+            <Grid ColumnDefinitions="*,Auto" Margin="10,20,0,0">
+                <HorizontalStackLayout Grid.Column="0" Spacing="5">
                     <BindableLayout.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Tall</x:String>
@@ -116,11 +120,15 @@
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </HorizontalStackLayout>
+
+                <Label Grid.Column="1" x:Name="PriceLabel" VerticalOptions="Center" HorizontalOptions="StartAndExpand"
+                       Text="{Binding SelectedProduct.ProductPrice, StringFormat='${0}.00'}" TextColor="{StaticResource Primary}"
+                       FontFamily="PoppinsRegular" FontSize="25" Margin="0,0,20,30"/>
             </Grid>
         </StackLayout>
 
         <Button Grid.Row="3" Text="Add to bag" HorizontalOptions="FillAndExpand" VerticalOptions="End"
                 FontFamily="RalewayMedium" FontSize="20" Background="{StaticResource PrimaryBrush}"
-                TextColor="White" CornerRadius="30" WidthRequest="250"/>
+                TextColor="White" CornerRadius="30" WidthRequest="250" Margin="0,0,0,20"/>
     </Grid>
 </ContentPage>
