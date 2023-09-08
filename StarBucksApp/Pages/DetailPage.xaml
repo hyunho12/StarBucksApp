@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StarBucksApp.Pages.DetailPage"
              xmlns:control="clr-namespace:StarBucksApp.ControlViews"
-             Shell.NavBarIsVisible="False"
-             Title="">
+             Shell.NavBarIsVisible="False">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -38,7 +37,7 @@
             </Border>
 
             <control:CustomStepperView WidthRequest="110" HeightRequest="30" HorizontalOptions="CenterAndExpand"
-                                       VerticalOptions="End"/>
+                                       VerticalOptions="End" x:Name="customStepper"/>
         </Grid>
 
         <StackLayout Grid.Row="2" Margin="0,30,0,0">
